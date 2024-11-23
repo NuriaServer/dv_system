@@ -18,6 +18,7 @@ class environment extends uvm_env;
   endfunction
 
   function void connect_phase(uvm_phase phase);
-    //interface from database  
+    //interface from database 
+    uvm_config_db#(virtual dut_if)::get(null, "*", "dut_if", dut_vif);
   endfunction
 endclass : environment

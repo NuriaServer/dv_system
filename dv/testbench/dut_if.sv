@@ -6,6 +6,9 @@ interface dut_if();
   logic reset_n;	//chip reset
   
   //other signals
+  logic      adc_convert;
+  logic      adc_ready;
+  logic[7:0] adc_q;
   
   tri1 sclk;
   tri1 sdata;   //be aware with inout signals. It is an opendrain that must be driven by someone continiuously
