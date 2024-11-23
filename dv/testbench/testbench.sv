@@ -27,5 +27,6 @@ module top;
     //interface to database
     run_test(); //+UVM_TESTNAME=test_i2c_write
   end
+  
     
 endmodule : top
