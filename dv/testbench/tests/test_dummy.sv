@@ -14,6 +14,7 @@ class test_dummy extends base_test;
     // **** TEST STARTS HERE ****
   
     // Reset
+    /*
     env.dut_vif.reset_n = 0;
     $display("Reset: %d", env.dut_vif.reset_n);
 	  #100us;    
@@ -21,6 +22,11 @@ class test_dummy extends base_test;
     $display("Reset: %d", env.dut_vif.reset_n);
 	  #100us;
 
+ 
+  
+*/
+    this.wait_reset();
+  
     // I2C read
     seq = i2c_basic_seq::type_id::create("seq");
     seq.i2c_addr = 5;

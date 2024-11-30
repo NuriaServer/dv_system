@@ -1,5 +1,6 @@
 `include "agent_i2c.sv"
 `include "agent_clock.sv"
+`include "agent_reset.sv"
 
 class environment extends uvm_env;  
   `uvm_component_utils(environment)
@@ -7,7 +8,8 @@ class environment extends uvm_env;
   i2c_agent i2c_agt;
   //other agents
   clock_agent clk_agt;
-
+  reset_agent rst_agt;
+  
   virtual dut_if dut_vif;
   
   function new(string name, uvm_component parent);
@@ -18,6 +20,7 @@ class environment extends uvm_env;
     i2c_agt = i2c_agent::type_id::create("i2c_agt", this);
 	//create other agents?
    clk_agt = clock_agent::type_id::create("clk_agt", this);
+   rst_agt =  reset_agent::type_id::create("rst_agt", this);
   endfunction
 
   function void connect_phase(uvm_phase phase);

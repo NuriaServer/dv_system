@@ -3,7 +3,7 @@
 
 class clock_driver extends uvm_driver;
   
-  int period_ns = 10; //100MHz
+  int period_ns = 5; //100MHz
   `uvm_component_utils(clock_driver)
 
   virtual dut_if dut_vif;
