@@ -1,0 +1,72 @@
+-----
+xrun dv/testbench/testbench.sv rtl/digital_top.sv -f rtl/dut.f -sv -sysv -64bit -dynamic -turbo -incdir . -incdir ./dv/testbench/ -incdir ./dv/testbench/tests/ -incdir ./dv/testbench/agents/i2c_agent/ -incdir ./dv/testbench/agents/clock_agent/ -incdir ./dv/testbench/agents/reset_agent/ -incdir ./dv/testbench/models/ -incdir ./rtl/ +overwrite -access +rw -run -stats -status -licqueue -uvm -uvmhome CDNS-1.2 +UVM_NO_RELNOTES -seed random +UVM_TESTNAME=test_i2c_read
+-----
+TOOL:	xrun(64)	23.03-s007: Started on Nov 30, 2024 at 13:02:56 CET
+xrun(64): 23.03-s007: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+Loading snapshot worklib.top:sv .................... Done
+SVSEED set randomly from command line: 1599751860
+xcelium> source /eda/cadence/2023-24/RHELx86/XCELIUM_23.03.007/tools/xcelium/files/xmsimrc
+xcelium> source /eda/cadence/2023-24/RHELx86/XCELIUM_23.03.007/tools/methodology/UVM/CDNS-1.2/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_bits_to_string.str" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_bits_to_string.str' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.cdns_uvm_pkg::_temp" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.cdns_uvm_pkg::_temp' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.cdns_uvm_pkg::_temp2" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.cdns_uvm_pkg::_temp2' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+UVM_INFO @ 0: reporter [RNTST] Running test test_i2c_read...
+UVM_INFO ./dv/testbench/tests/test_i2c_read.sv(11) @ 0: uvm_test_top [uvm_test_top]   ** TEST I2C READ **
+SDI/Verilog Transaction Recording Facility Version 23.03-s007
+SDI2 Transaction Recording API Version 23.03-s007
+UVM_INFO ./dv/testbench/agents/i2c_agent/seq_i2c.sv(18) @ 1000: uvm_test_top.env.i2c_agt.m_sequencer@@seq [i2c_basic_seq] i2c_basic_seq created
+UVM_INFO ./dv/testbench/agents/i2c_agent/driver_i2c.sv(35) @ 1000: uvm_test_top.env.i2c_agt.i2c_drv [I2C] Drv writes '{super:'{super:'{super:'{super:'{}, use_uvm_seeding:'h1, m_leaf_name:"req", m_inst_id:3380, m_inst_count:804, __m_uvm_status_container:uvm_pkg::uvm_status_container@533_1, uvm_global_copy_map:'{}}, events:uvm_pkg::uvm_object_string_pool#(uvm_pkg::uvm_event#(uvm_object))@1975_8, begin_event:uvm_pkg::uvm_event#(uvm_object)@1983_3, end_event:uvm_pkg::uvm_event#(uvm_object)@3330_1, m_transaction_id:1, begin_time:'h3e8, end_time:'hffffffffffffffff, accept_time:'hffffffffffffffff, initiator:null, stream_handle:null, tr_recorder:null}, m_sequence_id:1, m_use_sequence_info:'h1, m_depth:2, m_sequencer:uvm_pkg::uvm_sequencer_base@2445_4, m_parent_sequence:uvm_pkg::uvm_sequence_base@3343_47, issued1:'h0, issued2:'h0, print_sequence_info:'h0}, device_addr:'h1, addr:'h5, data:'h0, read:'h0, type_name:"i2c_basic_tr"}
+UVM_INFO ./dv/testbench/agents/i2c_agent/monitor_i2c.sv(61) @ 58000: uvm_test_top.env.i2c_agt.i2c_mon [I2C] Mon reads '{super:'{super:'{super:'{super:'{}, use_uvm_seeding:'h1, m_leaf_name:"", m_inst_id:1984, m_inst_count:806, __m_uvm_status_container:uvm_pkg::uvm_status_container@533_1, uvm_global_copy_map:'{}}, events:uvm_pkg::uvm_object_string_pool#(uvm_pkg::uvm_event#(uvm_object))@1975_8, begin_event:uvm_pkg::uvm_event#(uvm_object)@1983_3, end_event:uvm_pkg::uvm_event#(uvm_object)@3330_1, m_transaction_id:-1, begin_time:'hffffffffffffffff, end_time:'hffffffffffffffff, accept_time:'hffffffffffffffff, initiator:null, stream_handle:null, tr_recorder:null}, m_sequence_id:-1, m_use_sequence_info:'h0, m_depth:-1, m_sequencer:null, m_parent_sequence:null, issued1:'h0, issued2:'h0, print_sequence_info:'h0}, device_addr:'h1, addr:'h5, data:'h0, read:'h1, type_name:"i2c_basic_tr"}
+UVM_INFO ./dv/testbench/agents/i2c_agent/seq_i2c.sv(18) @ 64002: uvm_test_top.env.i2c_agt.m_sequencer@@seq [i2c_basic_seq] i2c_basic_seq created
+UVM_INFO ./dv/testbench/agents/i2c_agent/driver_i2c.sv(35) @ 64002: uvm_test_top.env.i2c_agt.i2c_drv [I2C] Drv writes '{super:'{super:'{super:'{super:'{}, use_uvm_seeding:'h1, m_leaf_name:"req", m_inst_id:3383, m_inst_count:815, __m_uvm_status_container:uvm_pkg::uvm_status_container@533_1, uvm_global_copy_map:'{}}, events:uvm_pkg::uvm_object_string_pool#(uvm_pkg::uvm_event#(uvm_object))@1975_8, begin_event:uvm_pkg::uvm_event#(uvm_object)@1983_3, end_event:uvm_pkg::uvm_event#(uvm_object)@3330_1, m_transaction_id:2, begin_time:'hfa02, end_time:'hffffffffffffffff, accept_time:'hffffffffffffffff, initiator:null, stream_handle:null, tr_recorder:null}, m_sequence_id:2, m_use_sequence_info:'h1, m_depth:2, m_sequencer:uvm_pkg::uvm_sequencer_base@2445_4, m_parent_sequence:uvm_pkg::uvm_sequence_base@3343_47, issued1:'h0, issued2:'h0, print_sequence_info:'h0}, device_addr:'h1, addr:'h5, data:'h0, read:'h1, type_name:"i2c_basic_tr"}
+UVM_INFO ./dv/testbench/agents/i2c_agent/monitor_i2c.sv(61) @ 121002: uvm_test_top.env.i2c_agt.i2c_mon [I2C] Mon reads '{super:'{super:'{super:'{super:'{}, use_uvm_seeding:'h1, m_leaf_name:"", m_inst_id:3382, m_inst_count:817, __m_uvm_status_container:uvm_pkg::uvm_status_container@533_1, uvm_global_copy_map:'{}}, events:uvm_pkg::uvm_object_string_pool#(uvm_pkg::uvm_event#(uvm_object))@1975_8, begin_event:uvm_pkg::uvm_event#(uvm_object)@1983_3, end_event:uvm_pkg::uvm_event#(uvm_object)@3330_1, m_transaction_id:-1, begin_time:'hffffffffffffffff, end_time:'hffffffffffffffff, accept_time:'hffffffffffffffff, initiator:null, stream_handle:null, tr_recorder:null}, m_sequence_id:-1, m_use_sequence_info:'h0, m_depth:-1, m_sequencer:null, m_parent_sequence:null, issued1:'h0, issued2:'h0, print_sequence_info:'h0}, device_addr:'h1, addr:'h5, data:'ha5, read:'h0, type_name:"i2c_basic_tr"}
+UVM_INFO /eda/cadence/2023-24/RHELx86/XCELIUM_23.03.007/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 125004: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /eda/cadence/2023-24/RHELx86/XCELIUM_23.03.007/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 125004: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /eda/cadence/2023-24/RHELx86/XCELIUM_23.03.007/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 125004: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   10
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[I2C]     4
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/REPORT/CATCHER]     1
+[i2c_basic_seq]     2
+[uvm_test_top]     1
+
+Simulation complete via $finish(1) at time 125004 NS + 63
+/eda/cadence/2023-24/RHELx86/XCELIUM_23.03.007/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+xmsim: Memory Usage - Final: 127.9M, Peak: 144.9M, Peak virtual: 418.4M
+xmsim: Main Thread CPU Usage - 0.0s system + 0.1s user = 0.1s total
+xmsim: CPU Usage - 0.0s system + 0.1s user = 0.1s total (9.5s, 1.2% cpu)
+TOOL:	xrun(64)	23.03-s007: Exiting on Nov 30, 2024 at 13:03:06 CET  (total: 00:00:10)
+-----
+ ____       _      ____    ____     
+U|  _"\ uU  /"\  u / __"| u/ __"| u  
+\| |_) |/ \/ _ \/ <\___ \/<\___ \/   
+ |  __/   / ___ \  u___) | u___) |   
+ |_|     /_/   \_\ |____/>>|____/>>  
+ ||>>_    \    >>  )(  (__))(  (__) 
+(__)__)  (__)  (__)(__)    (__)      
+[0;32mPASS [0m

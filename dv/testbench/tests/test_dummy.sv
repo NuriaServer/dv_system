@@ -27,12 +27,12 @@ class test_dummy extends base_test;
 */
     this.wait_reset();
   
-    // I2C read
-    seq = i2c_basic_seq::type_id::create("seq");
-    seq.i2c_addr = 5;
-    //seq.i2c_data = 0;
-    seq.i2c_read = 1;
-    seq.start(env.i2c_agt.m_sequencer);
+    // // I2C read
+    // seq = i2c_basic_seq::type_id::create("seq");
+    // seq.i2c_addr = 5;
+    // //seq.i2c_data = 0;
+    // seq.i2c_read = 1;
+    // seq.start(env.i2c_agt.m_sequencer);
 
     // **** TEST ENDS HERE ****
 
