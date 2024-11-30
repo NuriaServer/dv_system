@@ -5,3 +5,5 @@
 `include "test_dummy.sv"
 
 `include "test_i2c_read.sv"
+
+`include "test_i2c_write.sv"
